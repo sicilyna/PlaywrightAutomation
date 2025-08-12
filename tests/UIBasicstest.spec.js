@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test ('Browser Context Playwright test', async ({browser}) =>
+test('Browser Context Playwright test', async ({browser}) =>
     {
         //chrome - plugins / cookies
         const context = await browser.newContext();
@@ -11,11 +11,11 @@ test ('Browser Context Playwright test', async ({browser}) =>
     }
 );
 
-test.only('Page Playwright test', async ({page}) =>
+test('Page Playwright test', async ({page}) =>
     {
         await page.goto("https://google.com");
         //get title - assertion
         console.log (await page.title());
-        expect(page).toHaveTitle("Google");
+        await expect(page).toHaveTitle("Google");
     }
 );
