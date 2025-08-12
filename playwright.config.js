@@ -14,7 +14,8 @@ const config = ({
   reporter: 'html',
   use: {
 
-      browserName: 'firefox'
+      browserName: 'webkit',
+      headless: true
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 
   },
