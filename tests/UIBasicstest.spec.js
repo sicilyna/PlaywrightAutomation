@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test('Browser Context Playwright test', async ({browser}) =>
+test.only('Browser Context Playwright test', async ({browser}) =>
     {
         //chrome - plugins / cookies
         const context = await browser.newContext();
@@ -11,6 +11,8 @@ test('Browser Context Playwright test', async ({browser}) =>
         await page.locator('#username').fill("rahulshetty")
         await page.locator("[type='password']").fill("learning");
         await page.locator('#signInBtn').click();
+        //webdriverwait if in selenium
+        console.log(await page.locator("[style='display: block;'']").textContent());
     }
 );
 
